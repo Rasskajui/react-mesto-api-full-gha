@@ -17,6 +17,8 @@ const routes = require('./routes');
 
 const errorsHandler = require('./middlewares/errors');
 
+const cors = require('./middlewares/cors');
+
 const app = express();
 
 const { PORT = 3000 } = process.env;
@@ -30,6 +32,7 @@ app.use(helmet());
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(requestLogger);
+app.use(cors);
 app.use(routes);
 app.use(errorLogger);
 app.use(errors());

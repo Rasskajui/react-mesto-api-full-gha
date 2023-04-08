@@ -89,9 +89,9 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-56',
+  baseUrl: 'https://api.rasskajui.mesto.nomoredomains.monster/users',
   headers: {
-    authorization: '2f1089fd-d72d-4f9a-94ac-821334db37b8',
+    //authorization: '2f1089fd-d72d-4f9a-94ac-821334db37b8',
     'Content-Type': 'application/json'
   }
 });

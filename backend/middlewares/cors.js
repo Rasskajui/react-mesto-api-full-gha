@@ -1,6 +1,6 @@
 const allowedCors = [
-  'https://api.rasskajui.mesto.nomoredomains.monster/users',
-  'http://api.rasskajui.mesto.nomoredomains.monster/users',
+  'https://api.rasskajui.mesto.nomoredomains.monster',
+  'http://api.rasskajui.mesto.nomoredomains.monster',
   'localhost:3000',
 ];
 

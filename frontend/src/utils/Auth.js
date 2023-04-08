@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://api.rasskajui.mesto.nomoredomains.monster/users';
+export const BASE_URL = 'https://api.rasskajui.mesto.nomoredomains.monster';
 
 const checkResponse = (res) => {
   if (res.ok) {

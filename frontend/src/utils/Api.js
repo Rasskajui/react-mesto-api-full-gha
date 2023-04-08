@@ -91,7 +91,7 @@ class Api {
 const api = new Api({
   baseUrl: 'https://api.rasskajui.mesto.nomoredomains.monster/users',
   headers: {
-    //authorization: '2f1089fd-d72d-4f9a-94ac-821334db37b8',
+    authorization: localStorage.getItem('token'),
     'Content-Type': 'application/json'
   }
 });

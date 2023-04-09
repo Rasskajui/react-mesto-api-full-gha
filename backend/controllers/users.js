@@ -1,7 +1,8 @@
+const { NODE_ENV, JWT_SECRET } = process.env;
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
-const { NODE_ENV } = require('../utils/constants');
+const { NODE_ENV_DEV } = require('../utils/constants');
 const {
   NotFoundError,
   BadRequestError,
@@ -106,7 +107,7 @@ module.exports.login = (req, res, next) => {
   const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, NODE_ENV, { expiresIn: '7d' });
+      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : NODE_ENV_DEV, { expiresIn: '7d' });
       res.send({ token });
     })
     .then(() => { res.send({ message: 'Авторизация успешна' }); })

@@ -8,7 +8,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.76.7
+IP 51.250.76.7
 
 Frontend https://rasskajui.mesto.nomoredomains.work/
 

@@ -41,7 +41,7 @@ function App() {
             auth.getMail(jwt)
             .then((res) => {
                 if (res) {
-                    setEmail(res.data.email);
+                    setEmail(res.email);
                     setLoggedIn(true);
                     navigate('/', {replace: true});
                 }
@@ -124,14 +124,14 @@ function App() {
     
     function handleUpdateUser(newUserInfo) {
         api.updateUserInfo(newUserInfo.name, newUserInfo.about)
-            .then((updatedUser) => {setCurrentUser(updatedUser)})
+            .then((updatedUser) => {setCurrentUser(updatedUser.data)})
             .then(() => {closeAllPopups()})
             .catch((err) => {console.log(err)})
     }
     
     function handleUpdateAvatar(newAvatarInfo) {
         api.updateAvatar(newAvatarInfo.avatar)
-            .then((updatedUser) => {setCurrentUser(updatedUser)})
+            .then((updatedUser) => {setCurrentUser(updatedUser.data)})
             .then(() => {closeAllPopups()})
             .catch((err) => {console.log(err)})
     }

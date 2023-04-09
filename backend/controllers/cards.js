@@ -52,7 +52,7 @@ module.exports.likeCard = (req, res, next) => {
   )
     .then((card) => {
       if (card) {
-        res.send({ message: 'Карточка лайкнута' });
+        res.send(card);
       } else {
         next(new NotFoundError('Карточка не найдена'));
       }
@@ -68,7 +68,7 @@ module.exports.dislikeCard = (req, res, next) => {
   )
     .then((card) => {
       if (card) {
-        res.send({ message: 'Лайк снят с карточки' });
+        res.send(card);
       } else {
         next(new NotFoundError('Карточка не найдена'));
       }

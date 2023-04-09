@@ -51,6 +51,7 @@ function App() {
     }, []);
 
     useEffect(() => {
+        // В этот момент надо обновить заголовок api
         async function setUser() {
             await api.getUserInfo()
               .then((user) => {
